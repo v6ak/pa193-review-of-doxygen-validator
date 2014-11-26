@@ -1,6 +1,6 @@
 #Review of a Doxygen validator
 
-See https://github.com/Bender250/pa193/
+See the analyzed project: https://github.com/Bender250/pa193/
 
 ## Tokenizer
 * Tokens might overlap in any way. It makes more tricky to write the parser properly, so it is a poor design decision in my view.
@@ -17,6 +17,6 @@ When considering the tokenizer alone, it has a tricky API with some tricky undoc
 ## Parser
 * As notes in tokenizer, it assumes that it has input with `\` escape sequences filtered out by the tokenizer.
 * The parser seems to be very stateful.
-* TODO: To be analyzed
-* Some wrongly processed inputs found. (No memory corruption, though.)
+* TODO: To be analyzed deeper
+* Some wrongly processed inputs found. (No memory corruption so far, though.) See the `successful` directory.
 * It uses modern safe C++, which is not so much error prone as old C functions.
