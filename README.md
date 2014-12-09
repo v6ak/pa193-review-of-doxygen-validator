@@ -16,7 +16,7 @@ See the analyzed project: https://github.com/Bender250/pa193/
 When considering the tokenizer alone, it has a tricky API with some tricky undocumented (but seemingly intended) behaviour. When considering the tokenizer and how it is used in the `main.cpp` file, it works correctly. However, the design (namely overlapping tokens) makes it hard for the parser to process the tokenizer output correctly.
 
 ## Parser
-* As notes in tokenizer, it assumes that it has input with `\` escape sequences filtered out by the tokenizer.
+* As noted in tokenizer, it assumes that it has input with `\` escape sequences filtered out by the tokenizer.
 * The parser seems to be very stateful.
 * TODO: To be analyzed deeper
 * Some wrongly processed inputs found. (No memory corruption so far, though.) See the `successful` directory.
