@@ -11,7 +11,10 @@ See the analyzed project: https://github.com/Bender250/pa193/
 	* When user passes two different instances of the same string to tokenizer and parser, in can also lead in unexpected results.
 	* When user wants to read the string after passing it to the tokenizer, he might get some unexpected results.
 	* When there is a large "\n\n\n\n..." sequence, it takes `O(n^2)` time, which can be used for DoS in some cases (e.g. online validator).
+		* Some measurements for many `\` characters in file: (~0:53 for ~2MiB file, ~4:03 for ~4MiB file, ~20 minutes for ~8MiB file), which is a great opportunity for an attacker that wants to cause (D)DoS.
+
 * Except the `removeBackslashes` funtion, it is good that the tokenizer always finishes in a linear time with respect to the input length. (Not doing so might make it vulnerable to DoS attacks.)
+* It seems to take about linear amount of memory. That's quite decent, but I hope it could be better. It could accept a stream and use a constant amount of memory. If I wanted to DoS a server running this validator, I'd pass many large `\\\\\\…` inputs in parallel. When using many `\`s, it would ensure allocating such memory for a long time with high CPU consumption.
 
 When considering the tokenizer alone, it has a tricky API with some tricky undocumented (but seemingly intended) behaviour. When considering the tokenizer and how it is used in the `main.cpp` file, it works correctly. However, the design (namely overlapping tokens) makes it hard for the parser to process the tokenizer output correctly.
 
