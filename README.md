@@ -22,5 +22,5 @@ When considering the tokenizer alone, it has a tricky API with some tricky undoc
 * As noted in tokenizer, it assumes that it has input with `\` escape sequences filtered out by the tokenizer.
 * The parser seems to be very stateful, which I don't like. It makes hard for me to reason about it.
 * TODO: To be analyzed deeper
-* Some wrongly processed inputs found. (No memory corruption so far, though.) See the `successful` directory.
+* Some wrongly processed inputs found. (No memory corruption so far, though.) See the `wrongly-processed` directory.
 * It uses modern safe C++, which is not so much error prone as old C functions.
