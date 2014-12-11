@@ -2,6 +2,19 @@
 
 See the analyzed project: https://github.com/Bender250/pa193/
 
+## Methods
+* CPPCheck with `--enable=all` - Nothing interesting found
+* CLion checks - Some style issues warning only
+* Valgrind - memcheck
+* Debugging
+* Analyzed some design issues
+* Looked for obsolete (error-prone) C functions usage.
+* Manual deep review:
+	* Fully analyzed the tokenizer (very strongly believing there are no undetected issues).
+	* Fully analyzed the main.cpp (very strongly believing there are no issues at all).
+	* Analyzed the parser somehow, catching some issues. However, I can't put my hand into fire for not being some uncovered issues here. The code is very stateful and the design makes it tricky to review.
+	
+
 ## Tokenizer
 * Tokens might overlap in any way. It makes more tricky to write the parser properly, so it is a poor design decision in my view.
 * Tokenizer removes all backslashes in removeBackslashes method.
