@@ -1,4 +1,5 @@
-#Review of a Doxygen validator
+Review of a Doxygen validator                            
+===
 
 See the analyzed project: https://github.com/Bender250/pa193/
 
